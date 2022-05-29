@@ -39,7 +39,7 @@ export default function App() {
     })
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>{displayMain}</Text>
+      <Text style={styles.paragraph}>The weather is {displayMain}</Text>
       <Text style={styles.paragraph}>Temperature: {displayTemp}°C</Text>
       <Text style={styles.paragraph}>Feels like: {displayLike}°C</Text>
       <Text style={styles.paragraph}>Humidity: {displayHumidity}%</Text>

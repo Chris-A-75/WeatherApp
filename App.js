@@ -26,21 +26,22 @@ export default function App() {
     })
     .then(data => {
       fetchedTemp = data.current.temp;
-      fetchedTemp = parseInt(fetchedTemp + 2)
+      fetchedTemp = parseInt(fetchedTemp + 2);
       setTemp(fetchedTemp);
       fetchedMain = data.current.weather[0].main;
       setMain(fetchedMain);
       fetchedLike = data.current.feels_like;
-      fetchedLike = parseInt(fetchedLike + 2)
-      setLike(fetchedLike);
+      fetchedLike = parseInt(fetchedLike + 2);
+      setLike(fetchedLike);;
       fetchedHumid = data.current.humidity;
+      fetchedHumid = parseInt(fetchedHumid - 10);
       setHumidity(fetchedHumid);
     })
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>{displayMain}</Text><br></br>
-      <Text style={styles.paragraph}>Temperature: {displayTemp}°C</Text><br></br>
-      <Text style={styles.paragraph}>Feels like: {displayLike}°C</Text><br></br>
+      <Text style={styles.paragraph}>{displayMain}</Text>
+      <Text style={styles.paragraph}>Temperature: {displayTemp}°C</Text>
+      <Text style={styles.paragraph}>Feels like: {displayLike}°C</Text>
       <Text style={styles.paragraph}>Humidity: {displayHumidity}%</Text>
     </View>
   );

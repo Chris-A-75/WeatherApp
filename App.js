@@ -38,6 +38,7 @@ export default function App() {
     })
   return (
     <View style={styles.container}>
+      <Text style={styles={textAlign: 'left'}}>Today</Text>
       <Text style={styles.main}>{displayTemp}°</Text>
       <Text style={styles.submain}>{displayMain}</Text>
       <Text style={styles.paragraph}>Feels like: {displayLike}°</Text>

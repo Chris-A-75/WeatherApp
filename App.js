@@ -6,7 +6,7 @@ export default function App() {
   const [location, setLocation] = useState(null);
   const [displayTemp, setTemp] = useState('20');
   const [displayMain, setMain] = useState('Clear');
-  const [displayVis, setVis] = useState('10');0
+  const [displayVis, setVis] = useState('10');
   const [displayHumidity, setHumidity] = useState('50');
   const [displayPressure, setPressure] = useState('1000');
   const [displayDew, setDew] = useState('15');
@@ -45,12 +45,12 @@ export default function App() {
 
   const openWeatherKey = `75f7da7b194ffe59242dea1aafd6771a`;
   fadeIn();
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=Beirut&appid=${openWeatherKey}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?&units=metric&q=Beirut&appid=${openWeatherKey}`)
     .then(response => {
       return response.json();
     })
     .then(data => {
-      fetchedTemp = data.current.temp;
+      fetchedTemp = data.current.tempera;
       fetchedTemp = parseInt(fetchedTemp);
       setTemp(fetchedTemp);
 
@@ -74,10 +74,9 @@ export default function App() {
       setSunset(getCurrentTimeFromStamp(fetchedSunset,true));
 
       fetchedSunrise = data.current.sunrise;
-      setSunrise(getCurrentTimeFromStamp(fetchedSunrise,false));
-      ale
+      setSunrise(getCurrentTimeFromStamp(fetchedSunrise,false));7
     })
-  return (-
+  return (
     <ScrollView style={styles.container}>
       <Text style={{textAlign: 'center', fontSize: 25, fontWeight: 'bold', marginTop: 70, marginBottom: 50}}>Today</Text>
       <Text style={styles.main}>{displayTemp}°</Text>
